@@ -1,0 +1,105 @@
+/**
+ * Copyright (c) 2011-present Sonatype, Inc. All rights reserved.
+ * Includes the third-party code listed at http://links.sonatype.com/products/clm/attributions.
+ * "Sonatype" is a trademark of Sonatype, Inc.
+ */
+
+@use '~@sonatype/react-shared-components/scss-shared/nx-text-helpers';
+
+@use '../../../scss/variables' as *;
+
+$-notification-age-qualifier-width: 67px;
+$-notification-age-width: 43px;
+
+.iq-notifications-menu-button {
+  position: relative;
+
+  .iq-dropdown-menu {
+    padding-bottom: 8px;
+    right: -80px;
+    left: auto;
+    width: 360px;
+
+    &::before {
+      right: 87px;
+      left: inherit;
+    }
+
+    &::after {
+      right: 88px;
+      left: inherit;
+    }
+  }
+
+  .iq-scrollable {
+    max-height: 318px;
+  }
+}
+
+.iq-unread-dot {
+  border-radius: 50%;
+  pointer-events: none;
+  background-color: var(--nx-swatch-red-40);
+  height: 8px;
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 8px;
+}
+
+.iq-notif-error {
+  background-color: $iq-off-white;
+  border-radius: 50%;
+  color: var(--nx-swatch-red-40);
+  height: 16px;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 16px;
+
+  &.nx-icon {
+    margin: 0;
+  }
+}
+
+.iq-notification {
+  background-color: $iq-off-white;
+  color: $iq-off-black;
+  cursor: auto;
+  min-height: 36px;
+  line-height: 18px;
+  padding: 8px;
+
+  &.selected {
+    background-color: $iq-grey-1;
+  }
+
+  &.viewed {
+    color: $iq-slate;
+  }
+}
+
+.iq-notification__age {
+  box-sizing: border-box;
+  float: left;
+  font-size: 20px;
+  line-height: 20px;
+  padding-right: 8px;
+  text-align: right;
+  width: $-notification-age-width;
+}
+
+.iq-notification__age-qualifier {
+  box-sizing: border-box;
+  float: left;
+  padding-right: 16px;
+  text-align: left;
+  white-space: normal;
+  width: $-notification-age-qualifier-width;
+}
+
+.iq-notification__text {
+  display: inline-block;
+  width: calc(100% - #{$-notification-age-qualifier-width + $-notification-age-width});
+  white-space: normal;
+}

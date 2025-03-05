@@ -1,0 +1,79 @@
+/**
+ * Copyright (c) 2011-present Sonatype, Inc. All rights reserved.
+ * Includes the third-party code listed at http://links.sonatype.com/products/clm/attributions.
+ * "Sonatype" is a trademark of Sonatype, Inc.
+ */
+
+@use '~@sonatype/react-shared-components/scss-shared/nx-container-helpers';
+
+waiver-sidebar-view {
+  display: contents;
+}
+
+#waiver-details-page {
+  .nx-read-only--grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .iq-waiver-details {
+    &__vulnerability-details-button {
+      margin: 0;
+    }
+
+    &__vulnerability-details-link {
+      margin-bottom: var(--nx-spacing-8x);
+    }
+
+    &__delete-waiver {
+      text-align: right;
+    }
+
+    &__disclaimer.nx-p {
+      font-style: italic;
+      color: var(--nx-swatch-grey-30);
+      margin-bottom: var(--nx-spacing-2x);
+    }
+
+    &__comments {
+      .nx-read-only__data {
+        word-wrap: break-word;
+      }
+    }
+
+    &__components {
+      .component-name-and-upgrade-indicator {
+        display: flex;
+        justify-content: start;
+      }
+      .iq-upgrade-available-indicator {
+        margin-left: var(--nx-spacing-2x);
+      }
+    }
+  }
+}
+
+#auto-waiver-details-page {
+  .nx-read-only--grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .iq-auto-waiver-details {
+    &__policy {
+      .nx-threat-indicator {
+        margin: 0;
+      }
+    }
+
+    &__scope {
+      .nx-icon {
+        margin-left: 0;
+      }
+    }
+
+    &__expiration {
+      .nx-small-tag {
+        margin: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,198 @@
+/**
+ * Copyright (c) 2011-present Sonatype, Inc. All rights reserved.
+ * Includes the third-party code listed at http://links.sonatype.com/products/clm/attributions.
+ * "Sonatype" is a trademark of Sonatype, Inc.
+ */
+/*
+  #Colors
+*/
+
+// Old boostrap variables
+
+$bootstrap-error-text: #b94a48;
+$bootstrap-error-border: #e4b9c1;
+$bootstrap-error-background: #f2dede;
+
+// Sonatype brand colours
+$iq-sonatype-blue: #336699;
+$iq-sonatype-orange: #f89100;
+
+$iq-blue: #3d4e90;
+$iq-blue-xlight: #edeff7;
+$iq-blue-light: #dbdfed;
+$iq-blue-dark: #4f64ba;
+
+// Colour variables
+$iq-off-black: #070707;
+$iq-slate: #575757;
+$iq-off-white: #fefefe;
+
+$iq-grey-5: #b4b4b4;
+$iq-grey-4: #cacaca;
+$iq-grey-3: #dedede;
+$iq-grey-2: #eaeaea;
+$iq-grey-1: #f5f5f5;
+
+$iq-link-color: var(--nx-color-link);
+$iq-link-color-active: var(--nx-color-link-active);
+$iq-link-color-hover: var(--nx-color-link-hover);
+$iq-link-color-disabled: var(--nx-color-link-disabled);
+
+$iq-dark-blue: #006bbf;
+$iq-light-blue: #97cbee;
+
+$iq-dark-purple: #885195;
+$iq-light-purple: #dbc6df;
+$iq-medium-purple: #b087ba;
+
+$iq-dark-green: #099843;
+$iq-light-green: #b6e9ab;
+$iq-light-turquoise: #11a499;
+
+$iq-dark-red: #bc012f;
+$iq-light-red: #edb1af;
+
+$iq-orange: #f4861d;
+$iq-yellow: #f5c648;
+
+$iq-invalid-color: #c70000;
+$iq-valid-color: #84c900;
+
+// Was alert-fg & alert-bg
+$iq-warn-color: #9d6800;
+$iq-warn-color-bg: #fcf8e3;
+
+$iq-fail-color: #831d1d;
+$iq-fail-color-bg: #fce2e2;
+
+$iq-fail-color-active: #5c0000;
+$iq-fail-color-disabled: #dd9595;
+$iq-fail-color-hover: #5d0000;
+
+$pickable-colors: ('dark-blue', $iq-dark-blue), ('light-blue', $iq-light-blue), ('dark-green', $iq-dark-green),
+  ('light-green', $iq-light-green), ('orange', $iq-orange), ('dark-purple', $iq-dark-purple),
+  ('light-purple', $iq-light-purple), ('dark-red', $iq-dark-red), ('light-red', $iq-light-red), ('yellow', $iq-yellow);
+
+/*
+  ##Threat Colors
+*/
+// these policy threat colors are deprecated, please use $iq-threat-color-policy-* variables below
+$iq-threat-color-none: $iq-dark-blue;
+$iq-threat-color-low: $iq-dark-blue;
+$iq-threat-color-moderate: $iq-yellow;
+$iq-threat-color-severe: $iq-orange;
+$iq-threat-color-critical: $iq-dark-red;
+
+$iq-threat-color-unspecified: #d9dade;
+$iq-threat-color-ignore: $iq-light-blue;
+$iq-threat-color-policy-none: var(--nx-color-threat-none);
+$iq-threat-color-policy-low: var(--nx-color-threat-low);
+$iq-threat-color-policy-moderate: var(--nx-color-threat-moderate);
+$iq-threat-color-policy-severe: var(--nx-color-threat-severe);
+$iq-threat-color-policy-critical: var(--nx-color-threat-critical);
+
+$iq-threat-color-policy-none-light: #d9ecfb;
+$iq-threat-color-low-light: #92cbff;
+$iq-threat-color-moderate-light: #fdecaf;
+$iq-threat-color-severe-light: #ffd6a2;
+$iq-threat-color-critical-light: #ff9493;
+
+$threat-levels: ('none', #fff, $iq-threat-color-none, (0)), ('moderate', #444, $iq-threat-color-moderate, (1, 2, 3)),
+  ('severe', #fff, $iq-threat-color-severe, (4, 5, 6, 7)), ('critical', #fff, $iq-threat-color-critical, (8, 9, 10));
+
+$policy-threat-levels: ('none', #fff, $iq-threat-color-policy-none, (0)),
+  ('low', #444, $iq-threat-color-policy-low, (1)), ('moderate', #444, $iq-threat-color-policy-moderate, (2, 3)),
+  ('severe', #fff, $iq-threat-color-policy-severe, (4, 5, 6, 7)),
+  ('critical', #fff, $iq-threat-color-policy-critical, (8, 9, 10));
+
+$threat-bars: ('ignore', #fff, $iq-threat-color-ignore), ('unspecified', #fff, $iq-threat-color-unspecified);
+
+$nx-threat-levels: ('unspecified', --nx-color-threat-unspecified) ('none', --nx-color-threat-none),
+  ('low', --nx-color-threat-low), ('moderate', --nx-color-threat-moderate), ('severe', --nx-color-threat-severe),
+  ('critical', --nx-color-threat-critical);
+
+/*
+  #Content color variables
+*/
+$iq-main-background-color: $iq-grey-1;
+$iq-page-background: $iq-grey-1;
+$iq-content-background: $iq-grey-1;
+
+//  Text Colors
+$iq-text-color: $iq-off-black;
+$iq-text-color-light: $iq-slate;
+$iq-text-color-disabled: $iq-grey-4;
+$iq-text-color-error: $iq-fail-color;
+
+/*
+  #Borders
+*/
+$iq-border-darker: 1px solid $iq-slate;
+$iq-border-dark: 1px solid $iq-grey-4;
+$iq-border: 1px solid $iq-grey-3; // default
+$iq-border-light: 1px solid $iq-grey-2;
+$iq-border-lighter: 1px solid $iq-grey-1;
+$iq-border-error: 1px solid $iq-fail-color;
+
+// Border rows are used by lists and tables
+$iq-border-row: 1px solid $iq-grey-1;
+$iq-border-row-hover: 1px solid $iq-grey-4;
+$iq-border-row-disabled: 1px solid $iq-grey-1;
+$iq-border-row-dark: 1px solid $iq-grey-5;
+
+/*
+  #Margin/Padding widths
+*/
+$iq-spacing-xxs: 4px;
+$iq-spacing-xs: 8px;
+$iq-spacing-sm: 12px;
+$iq-spacing-md: 16px;
+$iq-spacing-l: 24px;
+$iq-spacing-xl: 32px;
+$iq-spacing-xxl: 64px;
+
+/*
+  #z-indexes
+  Gathered here for better visibility
+*/
+
+// Modal Z-indexes
+$iq-modal-backdrop-z-index: 1040;
+$iq-modal-z-index: 1050;
+
+$iq-color-picker-zindex: $iq-modal-backdrop-z-index - 10;
+$iq-form-mask-zindex: $iq-modal-z-index + 10;
+
+// This value is derived from bootstrap's tooltip z-index:
+$iq-tooltip-z-index: 1030;
+
+// need the login panel above the form save mask
+// ui-bootstrap modal window template sets z-index via ng-style, hence important
+$iq-login-modal-zindex: $iq-modal-z-index + 20 !important;
+
+// sidebar manage filter dropdown higher than main content
+$iq-sidebar-zindex: 4;
+
+// box-shadow to appear over scrollable contents
+$iq-dashboard-headers-zindex: 2;
+
+$iq-dashboard-mask-zindex: 1;
+
+/*
+  #Page elements
+*/
+$iq-page-width-max: 1366px;
+$iq-page-width-min: 1366px;
+$iq-content-width: 75.9%;
+$iq-sidebar-width: 100% - $iq-content-width;
+
+$iq-paragraph-width-maximum: 562px;
+
+$iq-cell-side-padding: 12px;
+$iq-cell-scroll-bar-width: 14px;
+
+$iq-alert-margin: 8px;
+
+$iq-scrollbar-width: 15px;
+
+$iq-scrollable-default-height: 400px;

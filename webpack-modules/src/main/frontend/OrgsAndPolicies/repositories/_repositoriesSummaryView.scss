@@ -1,0 +1,134 @@
+/**
+ * Copyright (c) 2011-present Sonatype, Inc. All rights reserved.
+ * Includes the third-party code listed at http://links.sonatype.com/products/clm/attributions.
+ * "Sonatype" is a trademark of Sonatype, Inc.
+ */
+
+@use '~@sonatype/react-shared-components/scss-shared/nx-text-helpers';
+
+#iq-repositories-configuration-table {
+  display: grid;
+  grid-template-columns:
+    minmax(180px, 1.5fr)
+    minmax(48px, max-content)
+    minmax(48px, max-content)
+    minmax(48px, max-content)
+    min-content;
+
+  tbody,
+  thead,
+  tr {
+    display: contents;
+  }
+
+  .nx-cell--header {
+    height: auto;
+  }
+
+  .nx-cell--meta-info,
+  .iq-collapsible-row__header {
+    grid-column: 1 / 5;
+  }
+
+  .nx-cell--meta-info {
+    align-items: center;
+    justify-content: center;
+    padding-top: 11px;
+    padding-bottom: 12px;
+  }
+
+  .iq-collapsible-row {
+    .nx-cell {
+      margin: 0;
+      background-color: var(--nx-swatch-indigo-95);
+    }
+  }
+
+  .nx-cell {
+    display: flex;
+    vertical-align: middle;
+    white-space: normal;
+    box-sizing: border-box;
+  }
+
+  .iq-repositories-configuration-table-repository,
+  .iq-repositories-configuration-table-repository-manager {
+    @include nx-text-helpers.truncate-ellipsis;
+  }
+}
+
+#repository-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .nx-page-title {
+    margin-bottom: var(--nx-spacing-2x);
+    .nx-h1 .nx-icon {
+      vertical-align: -2px;
+      img {
+        height: 26px;
+        vertical-align: baseline;
+      }
+    }
+  }
+
+  #iq-owner-actions-dropdown {
+    &.repository-dropdown {
+      .nx-dropdown-menu {
+        width: 250px !important;
+        margin-left: -100px;
+
+        .nx-text-link--external {
+          color: var(--nx-color-link);
+        }
+      }
+    }
+    .nx-dropdown-menu {
+      width: 325px !important;
+      margin-left: -175px;
+      max-height: none;
+    }
+  }
+
+  #scrollable-content:nth-last-child(1) {
+    padding-bottom: var(--nx-spacing-20x);
+    margin-bottom: var(--nx-spacing-20x);
+  }
+
+  #namespace-confusion-protection-pill-configuration {
+    .nx-table {
+      display: grid;
+      grid-template-columns: minmax(180px, 1.5fr) minmax(200px, 1.5fr) minmax(134px, 1fr) minmax(85px, max-content);
+    }
+
+    .nx-table.iq-repository-component-name-table-rm-level {
+      grid-template-columns: minmax(180px, 1.5fr) minmax(134px, 1fr) minmax(85px, max-content);
+    }
+
+    .nx-table.iq-repository-component-name-table-repository-level {
+      grid-template-columns: minmax(180px, 1.5fr) minmax(85px, max-content);
+    }
+
+    .nx-table-body,
+    .nx-table-head,
+    .nx-table-row {
+      display: contents;
+    }
+
+    .nx-cell--meta-info {
+      grid-column: 1/-1;
+    }
+
+    .nx-table-head {
+      .nx-cell__sort-btn {
+        display: flex;
+        align-items: center;
+      }
+
+      .nx-table-row--filter-header > .nx-cell--header {
+        height: auto;
+      }
+    }
+  }
+}

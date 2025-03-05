@@ -1,0 +1,91 @@
+/**
+ * Copyright (c) 2011-present Sonatype, Inc. All rights reserved.
+ * Includes the third-party code listed at http://links.sonatype.com/products/clm/attributions.
+ * "Sonatype" is a trademark of Sonatype, Inc.
+ */
+
+main-header,
+navigation-container,
+iq-sidebar-nav {
+  display: contents;
+}
+
+.iq-sidebar-nav-footer {
+  .nx-global-sidebar__release {
+    // In IQ, we want the "Release 123" (or whatever) text to appear even when the sidebar is collapsed.
+    // We want it to wrap as needed but we want the first line to stay the same distance from the bottom.
+    // By enforcing a single-line height here we force the first line to stay in place. The second line
+    // overflows out of the bottom of the element but there's nothing else visible down there so that's fine
+    height: calc(1em * var(--nx-line-height) + var(--nx-spacing-8x));
+    margin-bottom: 0;
+  }
+}
+
+.nx-global-sidebar.closed {
+  .iq-sidebar-nav-footer {
+    .nx-global-sidebar__release {
+      // In RSC, this whole section is invisible when collapsed. We only want the product name invisible
+      visibility: visible;
+      white-space: normal;
+    }
+  }
+
+  .iq-sidebar-nav-footer__product-name {
+    display: none;
+  }
+}
+
+.iq-api-nav-link {
+  &.nx-global-sidebar__navigation-link {
+    &,
+    .nx-global-sidebar__navigation-text {
+      align-items: baseline;
+      display: flex;
+    }
+  }
+
+  .nx-global-sidebar__navigation-text {
+    flex: 1;
+  }
+
+  > .nx-icon {
+    // the vertical-align that is set on FA icons doesn't work in flexbox.
+    // Replicate is as relative positioning
+    position: relative;
+    top: 0.125em;
+  }
+
+  &__navigation-badge {
+    $height: 22.5px;
+
+    background-color: var(--nx-swatch-pink-50);
+    border-radius: calc(#{$height} / 2);
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: $height;
+    margin-left: var(--nx-spacing-3x);
+    padding: 0 var(--nx-spacing-3x);
+    vertical-align: bottom;
+
+    &.preview {
+      background-color: var(--nx-swatch-blue-50);
+      color: var(--nx-swatch-white);
+    }
+  }
+
+  &__tooltip-only-text {
+    display: none;
+  }
+}
+
+.nx-global-sidebar .nx-global-sidebar__header {
+  // In IQ 161 the product logos have been updated before RSC can accommodate the new larger logos.
+  height: 43px;
+}
+
+.nx-global-sidebar .nx-global-sidebar__logo {
+  // In IQ 161 the product logos have been updated before RSC can accommodate the new larger logos.
+  max-width: 155px;
+  height: 43px;
+}

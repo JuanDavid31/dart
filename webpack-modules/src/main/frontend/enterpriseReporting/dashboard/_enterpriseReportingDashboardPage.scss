@@ -1,0 +1,61 @@
+/**
+ * Copyright (c) 2011-present Sonatype, Inc. All rights reserved.
+ * Includes the third-party code listed at http://links.sonatype.com/products/clm/attributions.
+ * "Sonatype" is a trademark of Sonatype, Inc.
+ */
+enterprise-reporting-dashboard-page {
+  display: contents;
+
+  iframe {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.enterprise-reporting-dashboard {
+  &__container {
+    display: contents;
+  }
+
+  &__navigation-bar {
+    font-size: 12px;
+    margin-left: 60px;
+  }
+
+  &__navigation-links {
+    display: flex;
+  }
+
+  &__link-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    margin: 0;
+  }
+
+  &__link-item {
+    &:not(:last-child) {
+      &::after {
+        color: var(--nx-swatch-black);
+        content: '|';
+        margin: 0 8px;
+      }
+    }
+  }
+  &__type {
+    &.nx-h3 {
+      color: var(--nx-swatch-black);
+      flex-shrink: 0;
+      font-weight: 600;
+      font-size: 12px;
+      margin: 2px 12px 0 0;
+    }
+  }
+}
+
+//Matching the Looker Dashboard marign, which shrinks at 1500px
+@media (max-width: 1500px) {
+  .enterprise-reporting-dashboard__navigation-bar {
+    margin-left: 20px;
+  }
+}
